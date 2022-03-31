@@ -1,0 +1,6 @@
+---
+- name: Install wine-development
+  apt:
+    pkg: wine-development
+    state: latest
+    update_cache: yes
