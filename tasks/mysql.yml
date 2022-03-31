@@ -42,7 +42,7 @@
 
 - name: Save MySQL otsmanager password
   template:
-    src: .my.cnf
+    src: templates/.my.cnf
     dest: /home/otsmanager/.my.cnf
     owner: otsmanager
     group: otsmanager
