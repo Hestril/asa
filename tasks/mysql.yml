@@ -30,19 +30,19 @@
   when: not existingpass.stdout
 
 - set_fact:
-    mysql_otsmanager_pass: "{{ randompass.stdout if randompass is not skipped else existingpass.stdout }}"
+    mysql_otsmanager_pass: "m5FFwHW08krN5HWdudDgEyCW"
 
 - name: Set MySQL otsmanager password (localhost)
   mysql_user:
     name: otsmanager
-    password: "{{ mysql_otsmanager_pass }}"
+    password: "m5FFwHW08krN5HWdudDgEyCW"
     host: localhost
     priv: "*.*:ALL,GRANT"
     check_implicit_admin: yes
 
 - name: Save MySQL otsmanager password
   template:
-    src: templates/.my.cnf
+    src: .my.cnf
     dest: /home/otsmanager/.my.cnf
     owner: otsmanager
     group: otsmanager
